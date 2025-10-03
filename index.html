@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Управление компаниями</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Управление компаниями</h1>
+
+      <div class="form-section">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="companyName">Название компании</label>
+            <input type="text" id="companyName" name="companyName" required />
+          </div>
+          <div class="form-group">
+            <label for="directorFullName">ФИО директора</label>
+            <input
+              type="text"
+              id="directorFullName"
+              name="directorFullName"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phoneNumber">Номер телефона</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Адрес</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+        </div>
+
+        <div class="btn-group">
+          <button id="addBtn" class="btn btn-primary" disabled>Добавить</button>
+          <button id="testDataBtn" class="btn btn-secondary">
+            Добавить тестовые данные
+          </button>
+        </div>
+      </div>
+
+      <div class="table-section">
+        <table id="companiesTable">
+          <thead>
+            <tr>
+              <th data-field="id">ID</th>
+              <th data-field="companyName">Название компании</th>
+              <th data-field="directorFullName">ФИО директора</th>
+              <th data-field="phoneNumber">Номер телефона</th>
+              <th data-field="address">Адрес</th>
+              <th class="actions-cell">Действия</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td colspan="6" class="empty-state">
+                Нет данных для отображения
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="src/main.ts"></script>
+  </body>
+</html>
