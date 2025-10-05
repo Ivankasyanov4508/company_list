@@ -23,6 +23,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*", "types/**/*.d.ts", "vite.config.ts"],
+  "include": ["src/**/*", "types/**/*.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
