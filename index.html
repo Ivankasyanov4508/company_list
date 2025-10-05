@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Управление компаниями</title>
+    <script type="module" crossorigin src="/company_list/assets/main-DN-2VWKL.js"></script>
+    <link rel="stylesheet" crossorigin href="/company_list/assets/main-BGR-7Y27.css">
+  </head>
+  <body>
+    <div class="app">
+      <h1>Управление компаниями</h1>
+
+      <div class="app__action-section">
+        <button id="openModalBtn" class="btn btn--primary">Добавить</button>
+      </div>
+
+      <!-- Modal -->
+      <div id="companyModal" class="modal">
+        <div class="modal__container">
+          <div class="modal__header">
+            <h2 id="modalTitle">Добавить компанию</h2>
+            <button id="closeModalBtn" class="modal__close-btn">&times;</button>
+          </div>
+
+          <div class="modal__body">
+            <div class="form__row">
+              <div class="form__group">
+                <label for="modalCompanyName">Название компании</label>
+                <input type="text" id="modalCompanyName" name="companyName" />
+              </div>
+              <div class="form__group">
+                <label for="modalDirectorFullName">ФИО директора</label>
+                <input
+                  type="text"
+                  id="modalDirectorFullName"
+                  name="directorFullName"
+                />
+              </div>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="modalPhoneNumber">Номер телефона</label>
+                <input type="tel" id="modalPhoneNumber" name="phoneNumber" />
+              </div>
+            </div>
+            <div class="form__row">
+              <h3>Адрес</h3>
+            </div>
+
+            <div class="form__row">
+              <div class="form__group">
+                <label for="modalCity">Город</label>
+                <input type="text" id="modalCity" name="city" />
+              </div>
+              <div class="form__group">
+                <label for="modalStreet">Улица</label>
+                <input type="text" id="modalStreet" name="street" />
+              </div>
+              <div class="form__group">
+                <label for="modalHouse">Дом</label>
+                <input type="text" id="modalHouse" name="house" />
+              </div>
+            </div>
+          </div>
+
+          <div class="modal__footer">
+            <button id="modalAddBtn" class="btn btn--primary" disabled>
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="table">
+        <div class="filter">
+          <div class="filter__group">
+            <input type="text" id="filterInput" placeholder="Найти по ФИО..." />
+          </div>
+        </div>
+        <table id="companiesTable">
+          <thead>
+            <tr>
+              <th data-field="companyName">Название компании</th>
+              <th data-field="directorFullName">ФИО директора</th>
+              <th data-field="phoneNumber">Номер телефона</th>
+              <th data-field="address">Адрес</th>
+              <th class="table__cell--actions"></th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td colspan="5" class="table__empty-state">
+                Нет данных для отображения
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="paginationContainer"></div>
+    </div>
+
+  </body>
+</html>
