@@ -80,10 +80,9 @@ export default class App {
       );
 
       this.totalPages = result.totalPages;
-
       if (this.currentPage > this.totalPages && this.totalPages > 0) {
-        this.currentPage = 1;
-        this.updateUrl(1);
+        this.currentPage = this.totalPages;
+        this.updateUrl(this.totalPages);
         await this.loadPage();
         return;
       }
