@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/company_list/',
+  base: import.meta.env.PROD ? '/company_list/' : '/',
   server: {
     port: 3000,
   },
